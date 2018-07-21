@@ -58,6 +58,8 @@
                 <!-- Bottom Toolbar-->
             </div>
         </div>
+        </body>
+        
         <!-- Path to Framework7 Library JS-->
         <script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/framework7.min.js"></script>
         <!-- Path to your app js-->
@@ -74,6 +76,6 @@
                 $$('#list').html(Template7.compile(questionTemplate)(result));
             });
         </script>
-</body>
+
 
 </html>
