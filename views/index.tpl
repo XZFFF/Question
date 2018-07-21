@@ -16,15 +16,6 @@
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="/static/Framework7-1.5.3/dist/css/my-app.css">
     <link rel="stylesheet" href="/static/css/question_index.css">
-    <style type="text/css">
-        .searchbar {
-            background-color: rgb(0, 164, 224);
-        }
-
-        .searchbar:after {
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -60,18 +51,18 @@
                             <div class="label-box lbox-close nobg m-line-15" id="questionList">
                                 <!--<script type="text/html" id="questionListTemplate">-->
 
-                                    <a class="label-item p-l-15 external" href="#">
-                                        <div class="label-inner">
-                                            <div class="item-arrow access-box m-r-15"></div>
-                                            <div class="item-content">这是一条热点问题</div>
-                                        </div>
-                                    </a>
-                                    <a class="label-item p-l-15 external" href="#">
-                                        <div class="label-inner">
-                                            <div class="item-arrow access-box m-r-15"></div>
-                                            <div class="item-content">这是另一条热点问题</div>
-                                        </div>
-                                    </a>
+                                <a class="label-item p-l-15 external" href="#">
+                                    <div class="label-inner">
+                                        <div class="item-arrow access-box m-r-15"></div>
+                                        <div class="item-content">这是一条热点问题</div>
+                                    </div>
+                                </a>
+                                <a class="label-item p-l-15 external" href="#">
+                                    <div class="label-inner">
+                                        <div class="item-arrow access-box m-r-15"></div>
+                                        <div class="item-content">这是另一条热点问题</div>
+                                    </div>
+                                </a>
                                 <!--</script>-->
                             </div>
                         </div>
