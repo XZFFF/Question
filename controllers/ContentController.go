@@ -1,15 +1,18 @@
 package controllers
 
 import (
-	"github.com/astaxie/beego"
+	"Question/models"
 )
 
 type ContentController struct {
-	beego.Controller
+	BaseController
 }
 
 func (c *ContentController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
 	c.TplName = "content.tpl"
+	id, _ := c.GetInt("id", 1)
+	question, err := models.GetById(id)
+	c.Data["Question"] = question
+	c.Data["Content"] = question.Content
+	c.Data["Error"] = err
 }
