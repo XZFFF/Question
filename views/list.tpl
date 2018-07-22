@@ -40,6 +40,10 @@
                     <div class="list-block search-here searchbar-found" style="margin-top: 0px;margin-bottom: 0px;padding-top: 0px;">
                         <!--搜索框下的内容-->
                         <div class="mod-qlist">
+                            <h3 class="list-title3" style="color: #000;margin-top: 10px">{{.Typename}}</h3>
+                            <hr>
+                        </div>
+                        <div class="mod-qlist">
                             <div class="label-box lbox-close nobg m-line-15" id="list" style="display:block">
                                 <!--<script type="text/html" id="listTemplate">-->
                                 {{range $index,$item := .List}}
