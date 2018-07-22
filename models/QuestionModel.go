@@ -1,8 +1,7 @@
 package models
 
 import (
-	// "github.com/astaxie/beego"
-	// "fmt"
+	"strings"
 	"time"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/Go-SQL-Driver/mysql"
@@ -64,10 +63,22 @@ func GetQuestionTypeList(questionType int) ([]Question, error) {
 
 func GetById(id int) (Question, error) {
 	o := orm.NewOrm()
-	question := Question{Id: id}
-	q := Question{Id: question.Id}
+	q := Question{Id: id}
 	err := o.Read(&q)
 	return q, err
 }
 
-
+func LikeInc(id int, likeType string) (error) {
+	o := orm.NewOrm()
+	q := Question{Id: id}
+	if o.Read(&q) == nil {
+		if strings.Compare(likeType, "like") == 0 {
+			q.Like = q.Like + 1
+		} else {
+			q.Dislike = q.Dislike + 1
+		}
+		_, err := o.Update(&q)
+		return err
+	}
+	return o.Read(&q)
+}
