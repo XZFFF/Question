@@ -70,7 +70,7 @@
                         </div>
                         <div class="label-box lbox-close" style="height: 220px;">
                             <div class="mod-img-qlist">
-                                <a class="label-imgbox external" href="./list">
+                                <a class="label-imgbox external" href="./list?question_type=1">
                                     <div class="qimg-box">
                                         <div class="icon1">
                                             <img src="/static/img/4.png">
@@ -78,7 +78,7 @@
                                         <h3>登录</h3>
                                     </div>
                                 </a>
-                                <a class="label-imgbox external" href="./list">
+                                <a class="label-imgbox external" href="./list?question_type=2">
                                     <div class="qimg-box">
                                         <div class="icon1">
                                             <img src="/static/img/3.png">
@@ -86,7 +86,7 @@
                                         <h3>图书馆</h3>
                                     </div>
                                 </a>
-                                <a class="label-imgbox external" href="./list">
+                                <a class="label-imgbox external" href="./list?question_type=3">
                                     <div class="qimg-box">
                                         <div class="icon1">
                                             <img src="/static/img/6.png">
@@ -94,7 +94,7 @@
                                         <h3>成绩</h3>
                                     </div>
                                 </a>
-                                <a class="label-imgbox external" href="./list">
+                                <a class="label-imgbox external" href="./list?question_type=4">
                                     <div class="qimg-box">
                                         <div class="icon">
                                             <img src="/static/img/1.png">
@@ -102,7 +102,7 @@
                                         <h3>校园卡</h3>
                                     </div>
                                 </a>
-                                <a class="label-imgbox external" href="./list">
+                                <a class="label-imgbox external" href="./list?question_type=5">
                                     <div class="qimg-box">
                                         <div class="icon">
                                             <img src="/static/img/2.png">
@@ -110,7 +110,7 @@
                                         <h3>更多功能</h3>
                                     </div>
                                 </a>
-                                <a class="label-imgbox external" href="./list">
+                                <a class="label-imgbox external" href="./list?question_type=6">
                                     <div class="qimg-box">
                                         <div class="icon">
                                             <img src="/static/img/5.png">
