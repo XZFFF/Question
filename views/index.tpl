@@ -55,7 +55,7 @@
                             <div class="label-box lbox-close nobg m-line-15" id="questionList">
                                 <!--<script type="text/html" id="questionListTemplate">-->
                                 <<<range $index,$item := .List>>>
-                                <a class="label-item p-l-15 external" href="#">
+                                <a class="label-item p-l-15 external" href="content?id=<<<$item.Id>>>">
                                     <div class="label-inner">
                                         <div class="item-arrow access-box m-r-15"></div>
                                         <div class="item-content"><<<$item.Title>>></div>
