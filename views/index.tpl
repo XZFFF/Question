@@ -33,14 +33,18 @@
                 </form>
                 <div class="searchbar-overlay"></div>
                 <div class="page-content" style="background-color: #fff">
+                    <!--
                     <script type="text/html" id="findTemplate">
+                        {{range $index,$item := .data}}
                         <a class="label-item p-l-15 external" href="#">
                             <div class="label-inner">
                                 <div class="item-arrow access-box m-r-15"></div>
-                                <div class="item-content" style="color: #000000;border-bottom: solid 1px #e1e1df">这是一条搜索结果条目</div>
+                                <div class="item-content" style="color: #000000;border-bottom: solid 1px #e1e1df">{{$item.Title}}</div>
                             </div>
                         </a>
+                        {{end}}
                     </script>
+                    -->
                     <div id="find" class="list-block searchbar-not-found">
                     </div>
 
@@ -50,19 +54,14 @@
                             <h3 class="list-title2">热点问题</h3>
                             <div class="label-box lbox-close nobg m-line-15" id="questionList">
                                 <!--<script type="text/html" id="questionListTemplate">-->
-
+                                {{range $index,$item := .List}}
                                 <a class="label-item p-l-15 external" href="#">
                                     <div class="label-inner">
                                         <div class="item-arrow access-box m-r-15"></div>
-                                        <div class="item-content">这是一条热点问题</div>
+                                        <div class="item-content">{{$item.Title}}</div>
                                     </div>
                                 </a>
-                                <a class="label-item p-l-15 external" href="#">
-                                    <div class="label-inner">
-                                        <div class="item-arrow access-box m-r-15"></div>
-                                        <div class="item-content">这是另一条热点问题</div>
-                                    </div>
-                                </a>
+                                {{end}}
                                 <!--</script>-->
                             </div>
                         </div>
@@ -132,30 +131,24 @@
         </div>
     </div>
 </body>
+
+
 <!-- Path to Framework7 Library JS-->
 <script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/framework7.min.js"></script>
 <!-- Path to your app js-->
 <script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/my-app.js"></script>
 <script type="text/javascript" src="/static/js/jquery-1.11.0.js"></script>
 <script type="text/javascript">
-    $$.getJSON("question_url", function (result) {
-        if (result.data.length == 0) return;
-        result.data.slice(0, 6);
-        var questionTemplate = $$('#questionListTemplate').html();
-        $$('#questionList').html(Template7.compile(questionTemplate)(result));
-
-    });
-
     $(function () {
         var findTemplate;
         $('#searchvalue').bind('change', function () {
             var obj = document.getElementById("searchvalue");
             var inputVal = $.trim(obj.value);
             $.ajax({
-                type: "GET",
-                url: "search_url" + inputVal,
+                type: "POST",
+                url: "http://localhost:8080/index",
                 data: {
-                    "inputVal": inputVal,
+                    "keyword": inputVal,
                 },
                 success: function (result) {
                     if (result.length == 0) {
