@@ -53,10 +53,10 @@ func SearchQuestionList(keyword string) ([]Question, error) {
 	return list, err
 }
 
-func GetQuestionTypeList(question_type int) ([]Question, error) {
+func GetQuestionTypeList(questionType int) ([]Question, error) {
 	o := orm.NewOrm()
 	var list []Question
-	_, err := o.QueryTable("question").Filter("question_type", question_type).All(&list)
+	_, err := o.QueryTable("question").Filter("question_type", questionType).All(&list)
 	
 	return list, err
 }
