@@ -52,12 +52,17 @@
                         <a class="current acive external">
                             <i class="icon-repost"></i>未解决</a>
                     </div>
-                    <button onclick="abc()">点我点我！</button>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
+<!-- Path to Framework7 Library JS-->
+<!--<script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/framework7.min.js"></script>-->
+<!-- Path to your app js-->
+<script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/my-app.js"></script>
+<script type="text/javascript" src="/static/js/jquery-1.11.0.js"></script>
 <script>
 function abc() {
     alert("success");
@@ -68,10 +73,8 @@ function abc() {
     var url = window.location.search;
     var like_type = "like";
     id = url.substring(url.lastIndexOf('=') + 1, url.length);
-    console.log("id=" + id);
 
     function feedback(c) {
-        console.log("click: " + c)
         document.getElementById("feedback_b").style.display = 'none';
         if (c == 1) {
             document.getElementById("feedback_b_z").style.display = 'block';
@@ -85,16 +88,11 @@ function abc() {
             type: "POST",
             url: "http://localhost:8080/content.html",
             data: {
-                "id": id "like_type": like_type,
+                "id": id,
+                "like_type": like_type,
             }
         })
     }
 </script>
-<!-- Path to Framework7 Library JS-->
-<script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/framework7.min.js"></script>
-<!-- Path to your app js-->
-<script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/my-app.js"></script>
-<script type="text/javascript" src="/static/js/jquery-1.11.0.js"></script>
-
 
 </html>
