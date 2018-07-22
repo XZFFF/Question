@@ -11,9 +11,7 @@ type IndexController struct {
 
 func (c *IndexController) Get() {
 	c.TplName = "index.tpl"
-
 	list, err := models.GetQuestionList()
-
 	c.Data["List"] = list
 	c.Data["Error"] = err
 }
