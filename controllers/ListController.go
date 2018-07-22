@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
+	"Question/models"
 )
 
 type ListController struct {
@@ -9,7 +10,9 @@ type ListController struct {
 }
 
 func (c *ListController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
 	c.TplName = "list.tpl"
+	question_type, _ := c.GetInt("question_type", 1)
+	list, err := models.GetQuestionTypeList(question_type)
+	c.Data["List"] = list
+	c.Data["Error"] = err
 }

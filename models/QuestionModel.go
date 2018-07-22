@@ -37,16 +37,6 @@ func (m *Question) TableName() string {
 	return TableName("question")
 }
 
-// func NewQuestion() *Question {
-// 	return &Question{}
-// }
-
-// // TableEngine 获取数据使用的引擎.
-// func (m *Question) TableEngine() string {
-// 	return "INNODB"
-// }
-
-
 func GetQuestionList() ([]Question, error) {
 	o := orm.NewOrm()
 	var list []Question
@@ -62,6 +52,15 @@ func SearchQuestionList(keyword string) ([]Question, error) {
 	
 	return list, err
 }
+
+func GetQuestionTypeList(question_type int) ([]Question, error) {
+	o := orm.NewOrm()
+	var list []Question
+	_, err := o.QueryTable("question").Filter("question_type", question_type).All(&list)
+	
+	return list, err
+}
+
 
 func GetById(id int) (Question, error) {
 	o := orm.NewOrm()

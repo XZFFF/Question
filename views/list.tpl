@@ -42,13 +42,14 @@
                         <div class="mod-qlist">
                             <div class="label-box lbox-close nobg m-line-15" id="list" style="display:block">
                                 <!--<script type="text/html" id="listTemplate">-->
-
+                                {{range $index,$item := .List}}
                                 <a class="label-item p-l-15 external" href="content_url">
                                     <div class="label-inner">
                                         <div class="item-arrow access-box m-r-15"></div>
-                                        <div class="item-content">这是其中一条问题</div>
+                                        <div class="item-content">{{$item.Title}}</div>
                                     </div>
                                 </a>
+                                {{end}}
                                 <!--</script>-->
                             </div>
 
@@ -58,24 +59,11 @@
                 <!-- Bottom Toolbar-->
             </div>
         </div>
-        </body>
-        
-        <!-- Path to Framework7 Library JS-->
-        <script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/framework7.min.js"></script>
-        <!-- Path to your app js-->
-        <script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/my-app.js"></script>
-        <script type="text/javascript">
-            var url = window.location.search;
-            var loc = url.substring(url.lastIndexOf('=') + 1, url.length);
-            $$.getJSON("question_url" + loc, function (
-                result) {
+</body>
 
-                if (result.data.length == 0) return;
-
-                var questionTemplate = $$('#listTemplate').html();
-                $$('#list').html(Template7.compile(questionTemplate)(result));
-            });
-        </script>
-
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/framework7.min.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/my-app.js"></script>
 
 </html>
