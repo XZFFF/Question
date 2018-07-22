@@ -24,12 +24,11 @@
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <div class="detail-box" id="cont">
-                <!--<script type="text/html" id="contTemplate">-->
-                <h2 class="q-title">{{.Question.Title}}</h2>
+                <h2 class="q-title"><<<.Question.Title>>></h2>
                 <div class="q-content">
                     <div>
                         <div style="line-height: 21px;">
-                            {{str2html .Question.Content}}
+                            <<<str2html .Question.Content>>>
                         </div>
                     </div>
                 </div>
@@ -41,7 +40,6 @@
                             <i class="icon-repost"></i>未解决</a>
                     </div>
                 </div>
-                <!--</script>-->
             </div>
         </div>
     </div>
@@ -52,5 +50,4 @@
 <!-- Path to your app js-->
 <script type="text/javascript" src="/static/Framework7-1.5.3/dist/js/my-app.js"></script>
 <script type="text/javascript" src="/static/js/jquery-1.11.0.js"></script>
-
 </html>

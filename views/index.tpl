@@ -33,18 +33,18 @@
                 </form>
                 <div class="searchbar-overlay"></div>
                 <div class="page-content" style="background-color: #fff">
-                    <!--
+
                     <script type="text/html" id="findTemplate">
-                        {{range $index,$item := .data}}
-                        <a class="label-item p-l-15 external" href="#">
+                        {{#each data}}
+                        <a class="label-item p-l-15 external" href="content.html?id={{id}}">
                             <div class="label-inner">
                                 <div class="item-arrow access-box m-r-15"></div>
-                                <div class="item-content" style="color: #000000;border-bottom: solid 1px #e1e1df">{{$item.Title}}</div>
+                                <div class="item-content" style="color: #000000;border-bottom: solid 1px #e1e1df">{{title}}</div>
                             </div>
                         </a>
-                        {{end}}
+                        {{/each}}
                     </script>
-                    -->
+
                     <div id="find" class="list-block searchbar-not-found">
                     </div>
 
@@ -54,14 +54,14 @@
                             <h3 class="list-title2">热点问题</h3>
                             <div class="label-box lbox-close nobg m-line-15" id="questionList">
                                 <!--<script type="text/html" id="questionListTemplate">-->
-                                {{range $index,$item := .List}}
+                                <<<range $index,$item := .List>>>
                                 <a class="label-item p-l-15 external" href="#">
                                     <div class="label-inner">
                                         <div class="item-arrow access-box m-r-15"></div>
-                                        <div class="item-content">{{$item.Title}}</div>
+                                        <div class="item-content"><<<$item.Title>>></div>
                                     </div>
                                 </a>
-                                {{end}}
+                                <<<end>>>
                                 <!--</script>-->
                             </div>
                         </div>
@@ -156,6 +156,9 @@
                     } else {
                         findTemplate = $$('#findTemplate').html();
                         $$('#find').html(Template7.compile(findTemplate)(result));
+                        // $$('#find').html(result.data[0]);
+
+                        console.log(result)
                     }
                 }
             })

@@ -46,14 +46,14 @@
                         <div class="mod-qlist">
                             <div class="label-box lbox-close nobg m-line-15" id="list" style="display:block">
                                 <!--<script type="text/html" id="listTemplate">-->
-                                {{range $index,$item := .List}}
+                                <<<range $index,$item := .List>>>
                                 <a class="label-item p-l-15 external" href="content_url">
                                     <div class="label-inner">
                                         <div class="item-arrow access-box m-r-15"></div>
-                                        <div class="item-content">{{$item.Title}}</div>
+                                        <div class="item-content"><<<$item.Title>>></div>
                                     </div>
                                 </a>
-                                {{end}}
+                                <<<end>>>
                                 <!--</script>-->
                             </div>
 
